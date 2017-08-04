@@ -1,0 +1,24 @@
+{
+  "name": "calc-fontsize",
+  "version": "1.0.0",
+  "description": "calculate font-size",
+  "main": "index.js",
+  "scripts": {
+    "test": "live-server",
+    "install": "browserify index.js -o index.compiled.js",
+    "watch": "watchify index.js -o index.compiled.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/davidfig/debug.git"
+  },
+  "author": "David Figatner",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/davidfig/debug/issues"
+  },
+  "homepage": "https://github.com/davidfig/debug#readme",
+  "dependencies": {
+    "highlight.js": "^9.12.0"
+  }
+}
