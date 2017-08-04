@@ -35,7 +35,7 @@ module.exports = function calcFontSize(text, options)
     let max = options.max || 1000
     _dummy.style.fontSize = size + 'px'
     _dummy.innerHTML = text
-    while (size < max && (!options.width || _dummy.offsetWidth < options.width) && (!options.height || _dummy.offsetHeight < options.height))
+    while (size <= max && (!options.width || _dummy.offsetWidth < options.width) && (!options.height || _dummy.offsetHeight < options.height))
     {
         size++
         _dummy.style.fontSize = size + 'px'
