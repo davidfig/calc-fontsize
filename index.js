@@ -19,20 +19,22 @@ let _dummy
   * @param {number} [max=1000] maximium font size
   * @returns {number} fontSize
   */
-module.exports = function calcFontSize(text, options)
+module.exports = function FontSize(text, options)
 {
     if (!_dummy)
     {
         _dummy = document.createElement('div')
         document.body.appendChild(_dummy)
         _dummy.style.position = 'absolute'
+        _dummy.style.padding = 0
+        _dummy.style.margin = 0
         _dummy.style.float = 'left'
         _dummy.style.whiteSpace = 'no-wrap'
         _dummy.style.visibility = 'hidden'
     }
-    _dummy.style.fontFamily = options.fontFamily
+    _dummy.style.fontFamily = options.fontFamily || ''
     let size = options.min || 10
-    let max = options.max || 1000
+    const max = options.max || 1000
     _dummy.style.fontSize = size + 'px'
     _dummy.innerHTML = text
     while (size <= max && (!options.width || _dummy.offsetWidth < options.width) && (!options.height || _dummy.offsetHeight < options.height))
