@@ -11,7 +11,7 @@ calculate font-size for a given bounding box and optionally a font
     div.style.fontSize = FontSize(text, {width: 100, height: 100, fontFamily: 'arial'})
 
     div.style.fontFamily = 'arial'
-    div.style.fontSize = fontSize
+    div.style.fontSize = fontSize + 'px'
     div.innerText = text
 
 
