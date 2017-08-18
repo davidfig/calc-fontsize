@@ -1,18 +1,17 @@
 {
-  "name": "calc-fontsize",
-  "version": "1.0.3",
-  "description": "calculate font-size",
-  "main": "index.js",
-  "scripts": {
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/davidfig/calc-fontsize.git"
-  },
-  "author": "David Figatner",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/davidfig/calc-fontsize/issues"
-  },
-  "homepage": "https://github.com/davidfig/calc-fontsize#readme"
+    "name": "calc-fontsize",
+    "version": "1.1.0",
+    "description": "calculate font-size",
+    "main": "index.js",
+    "scripts": {},
+    "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/davidfig/calc-fontsize.git"
+    },
+    "author": "David Figatner",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/davidfig/calc-fontsize/issues"
+    },
+    "homepage": "https://github.com/davidfig/calc-fontsize#readme"
 }

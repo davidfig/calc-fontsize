@@ -9,18 +9,28 @@
 
 let _dummy
 
- /**
+/**
   * @param {string} text
   * @param {object} options
-  * @param {number} [maxWidth] bounding box width and/or height
-  * @param {number} [maxHeight] "
+  * @param {number} [width] bounding box width and/or height
+  * @param {number} [height] "
   * @param {string} [fontFamily] use this font-family to determine the size
   * @param {number} [min=10] minimum font size
   * @param {number} [max=1000] maximium font size
+  * @param {boolean} [remove=false] remove dummy element instead of hiding it for use on next call
   * @returns {number} fontSize
   */
 module.exports = function FontSize(text, options)
 {
+    if (!text)
+    {
+        return 0
+    }
+    if (!options || (!options.width && !options.height))
+    {
+        console.error('ERROR: calc-fontsize requires either a width or height specified')
+        return 0
+    }
     if (!_dummy)
     {
         _dummy = document.createElement('div')
@@ -32,6 +42,10 @@ module.exports = function FontSize(text, options)
         _dummy.style.whiteSpace = 'no-wrap'
         _dummy.style.visibility = 'hidden'
     }
+    else
+    {
+        _dummy.style.display = 'block'
+    }
     _dummy.style.fontFamily = options.fontFamily || ''
     let size = options.min || 10
     const max = options.max || 1000
@@ -41,6 +55,15 @@ module.exports = function FontSize(text, options)
     {
         size++
         _dummy.style.fontSize = size + 'px'
+    }
+    if (options.remove)
+    {
+        document.body.removeChild(_dummy)
+        _dummy = null
+    }
+    else
+    {
+        _dummy.style.display = 'none'
     }
     return size - 1
 }

@@ -14,7 +14,6 @@ calculate font-size for a given bounding box and optionally a font
     div.style.fontSize = fontSize + 'px'
     div.innerText = text
 
-
 ## Live Example
 https://davidfig.github.io/calc-fontsize/
 
@@ -32,6 +31,7 @@ https://davidfig.github.io/calc-fontsize/
      * @param {string} [fontFamily]
      * @param {number} [min=10] minimum font size
      * @param {number} [max=1000] maximium font size
+     * @param {boolean} [remove=false] remove dummy element instead of hiding it for use on next call
      * @returns {number} fontSize
      */
     function FontSize(text, options)
